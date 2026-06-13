@@ -46,7 +46,7 @@ export default function App() {
   const [runHistory, setRunHistory] = useState({ baseline: [], optimized: [] });
 
   const [apiKeys, setApiKeys] = useState({
-    gemini: import.meta.env.VITE_GEMINI_API_KEY || ''
+    gemini: localStorage.getItem('agentforge_gemini_key') || import.meta.env.VITE_GEMINI_API_KEY || ''
   });
 
   const isKeyValid = !!(apiKeys.gemini && (apiKeys.gemini.trim().startsWith('AIzaSy') || apiKeys.gemini.trim().startsWith('AQ.')));
@@ -315,7 +315,11 @@ export default function App() {
                 <input 
                   type="text" 
                   value={apiKeys.gemini}
-                  onChange={(e) => setApiKeys({...apiKeys, gemini: e.target.value})}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    setApiKeys({...apiKeys, gemini: val});
+                    localStorage.setItem('agentforge_gemini_key', val);
+                  }}
                   placeholder="Enter key (starts with AIzaSy or AQ.)..."
                   style={{ fontFamily: 'var(--font-mono)' }}
                 />
