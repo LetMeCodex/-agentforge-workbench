@@ -1,42 +1,42 @@
 @import "tailwindcss";
 
 @theme {
-  --color-panel-bg: #0d111a;
-  --color-panel-elevated: #111827;
-  --color-panel-soft: #0f172a;
-  --color-track-bg: #151a24;
-  --color-accent-purple: #635bff;
-  --color-optimized-green: #22c55e;
-  --color-baseline-red: #ef4444;
-  --color-warning-amber: #f59e0b;
+  --color-panel-bg: var(--panel);
+  --color-panel-elevated: var(--panel-elevated);
+  --color-panel-soft: var(--panel-soft);
+  --color-track-bg: var(--bg);
+  --color-accent-purple: var(--accent);
+  --color-optimized-green: var(--success);
+  --color-baseline-red: var(--danger);
+  --color-warning-amber: var(--warning);
 }
 
 :root {
-  --bg: #090a0f;
-  --sidebar: #0f1015;
-  --panel: #121319;
-  --panel-elevated: #161720;
-  --panel-soft: #14151c;
+  --bg: #FDFCF7;           /* Premium warm off-white cream background */
+  --sidebar: #0C0A09;      /* Aesthetic rich black sidebar background */
+  --panel: #F6F4EB;          /* Slightly deeper cream for panel containers */
+  --panel-elevated: #FFFFFF; /* Pure white for elements that hover/elevate */
+  --panel-soft: #FBF9F3;     /* Extremely soft background cream for sub-panels */
 
-  --border: rgba(255, 255, 255, 0.05);
-  --border-strong: rgba(255, 255, 255, 0.09);
+  --border: rgba(28, 25, 23, 0.08); /* Dark subtle border */
+  --border-strong: rgba(28, 25, 23, 0.14); /* Stronger dark border */
 
-  --text: #f8fafc;
-  --text-soft: #cbd5e1;
-  --text-muted: #8b98ad;
-  --text-faint: #5f6b7a;
+  --text: #0C0A09;         /* Aesthetic matte black text color */
+  --text-soft: #44403C;    /* Stone-700 / dark charcoal text */
+  --text-muted: #78716C;   /* Stone-500 / medium gray text */
+  --text-faint: #A8A29E;   /* Stone-400 / light gray text */
 
-  --accent: #8c52ff;
-  --accent-soft: rgba(140, 82, 255, 0.12);
+  --accent: #0C0A09;       /* Matte black primary accent */
+  --accent-soft: rgba(28, 25, 23, 0.06);
 
-  --success: #22c55e;
-  --success-soft: rgba(34, 197, 94, 0.12);
+  --success: #16A34A;      /* Rich emerald green for positive highlights */
+  --success-soft: rgba(22, 163, 74, 0.08);
 
-  --danger: #ef4444;
-  --danger-soft: rgba(239, 68, 68, 0.12);
+  --danger: #DC2626;       /* Readability-optimized crimson red */
+  --danger-soft: rgba(220, 38, 38, 0.08);
 
-  --warning: #f59e0b;
-  --warning-soft: rgba(245, 158, 11, 0.12);
+  --warning: #D97706;      /* Rich amber for warnings */
+  --warning-soft: rgba(217, 119, 6, 0.08);
 
   /* Radius & Shadows */
   --radius-lg: 12px;
@@ -46,6 +46,9 @@
   /* Typography */
   --font-sans: "Inter", "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
+
+  --logo-fill: #FDFCF7;
+  --logo-stroke: #0C0A09;
 }
 
 * {
@@ -410,11 +413,211 @@ input:checked + .slider:before {
 
 pre {
   font-family: var(--font-mono);
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.03);
   padding: 8px 12px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   overflow-x: auto;
   color: var(--text-soft);
   font-size: 12px;
+}
+
+/* ==========================================================================
+   PREMIUM LIGHT THEME OVERRIDES (Aesthetic Cream & Aesthetic Black)
+   ========================================================================== */
+
+/* 1. Global Inline White Text Overrides inside .main-content */
+.main-content *[style*="color: #ffffff"]:not(.primary-button):not(.apex-button-purple):not(.avatar-initials):not(.apex-gradient-card *):not(.apex-gradient-card),
+.main-content *[style*="color: #fff"]:not(.primary-button):not(.apex-button-purple):not(.avatar-initials):not(.apex-gradient-card *):not(.apex-gradient-card),
+.main-content *[style*="color: white"]:not(.primary-button):not(.apex-button-purple):not(.avatar-initials):not(.apex-gradient-card *):not(.apex-gradient-card),
+.main-content *[style*="color:rgb(255, 255, 255)"]:not(.primary-button):not(.apex-button-purple):not(.avatar-initials):not(.apex-gradient-card *):not(.apex-gradient-card),
+.main-content *[style*="color: rgb(255, 255, 255)"]:not(.primary-button):not(.apex-button-purple):not(.avatar-initials):not(.apex-gradient-card *):not(.apex-gradient-card),
+.main-content *[style*="color:#fff"]:not(.primary-button):not(.apex-button-purple):not(.avatar-initials):not(.apex-gradient-card *):not(.apex-gradient-card),
+.main-content *[style*="color:#ffffff"]:not(.primary-button):not(.apex-button-purple):not(.avatar-initials):not(.apex-gradient-card *):not(.apex-gradient-card),
+.main-content *[style*="color:white"]:not(.primary-button):not(.apex-button-purple):not(.avatar-initials):not(.apex-gradient-card *):not(.apex-gradient-card),
+.main-content *[style*="color: #F8FAFC"]:not(.primary-button):not(.apex-button-purple):not(.avatar-initials):not(.apex-gradient-card *):not(.apex-gradient-card),
+.main-content *[style*="color:#F8FAFC"]:not(.primary-button):not(.apex-button-purple):not(.avatar-initials):not(.apex-gradient-card *):not(.apex-gradient-card),
+.main-content *[style*="color: #f8fafc"]:not(.primary-button):not(.apex-button-purple):not(.avatar-initials):not(.apex-gradient-card *):not(.apex-gradient-card),
+.main-content *[style*="color:#f8fafc"]:not(.primary-button):not(.apex-button-purple):not(.avatar-initials):not(.apex-gradient-card *):not(.apex-gradient-card) {
+  color: var(--text) !important;
+}
+
+/* 2. Layout Elements & Header */
+.main-content header {
+  border-bottom: 1px solid var(--border) !important;
+}
+.main-content header h1 {
+  color: var(--text) !important;
+}
+
+/* 3. Component Cards and Panels overrides */
+.apex-card {
+  background-color: var(--panel) !important;
+  border: 1px solid var(--border) !important;
+}
+.apex-card:hover {
+  border-color: var(--border-strong) !important;
+}
+
+/* 4. Search and input controls */
+.apex-search-input {
+  background-color: var(--panel-elevated) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+}
+.apex-search-input:focus {
+  border-color: var(--accent) !important;
+}
+
+/* 5. Custom Buttons */
+.apex-button-border {
+  border: 1px solid var(--border) !important;
+  color: var(--text-soft) !important;
+}
+.apex-button-border:hover {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+  border-color: var(--border-strong) !important;
+}
+.apex-button-purple {
+  background-color: var(--accent) !important;
+  color: var(--bg) !important;
+}
+.apex-button-purple:hover {
+  opacity: 0.9 !important;
+}
+.apex-tab-underline {
+  background-color: var(--accent) !important;
+}
+
+/* 6. Active sidebar item inside the rich black sidebar */
+.nav-active {
+  background: var(--bg) !important;
+  color: var(--sidebar) !important;
+  font-weight: 600 !important;
+}
+
+/* 7. Premium Matte Black Gradient Card */
+.apex-gradient-card {
+  background: linear-gradient(135deg, #1C1917 0%, #0C0A09 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 20px rgba(12, 10, 9, 0.15) !important;
+  color: #FAF8F2 !important;
+}
+.apex-gradient-card * {
+  color: #FAF8F2 !important;
+}
+
+/* 8. Table overrides */
+.apex-table th {
+  color: var(--text-muted) !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+.apex-table td {
+  border-bottom: 1px solid var(--border) !important;
+  color: var(--text-soft) !important;
+}
+.apex-table tr:hover td {
+  background-color: rgba(0, 0, 0, 0.01) !important;
+}
+
+/* 9. Hardcoded dark backgrounds in component containers */
+.main-content *[style*="background: #121319"],
+.main-content *[style*="background:#121319"],
+.main-content *[style*="background-color: #121319"],
+.main-content *[style*="background-color:#121319"],
+.main-content *[style*="background: #090a0f"],
+.main-content *[style*="background:#090a0f"],
+.main-content *[style*="background-color: #090a0f"],
+.main-content *[style*="background-color:#090a0f"],
+.main-content *[style*="background: #0e1015"],
+.main-content *[style*="background:#0e1015"],
+.main-content *[style*="background-color: #0e1015"],
+.main-content *[style*="background-color:#0e1015"] {
+  background: var(--panel) !important;
+  background-color: var(--panel) !important;
+  border-color: var(--border) !important;
+}
+
+/* 10. White/transparent border overrides */
+.main-content *[style*="border-color: rgba(255"],
+.main-content *[style*="border: 1px solid rgba(255"],
+.main-content *[style*="border:1px solid rgba(255"] {
+  border-color: var(--border) !important;
+}
+
+/* 11. Chart styling & Gridlines */
+.main-content svg line {
+  stroke: rgba(0, 0, 0, 0.06) !important;
+}
+.main-content svg text[fill="#6B7280"],
+.main-content svg text[fill="#A1AAB8"] {
+  fill: var(--text-muted) !important;
+}
+.main-content svg path[stroke="#8C52FF"] {
+  stroke: var(--text) !important;
+}
+.main-content svg path[stroke="#F59E0B"] {
+  stroke: var(--text-muted) !important;
+}
+.main-content *[style*="background: #8C52FF"],
+.main-content *[style*="background:#8C52FF"] {
+  background: var(--text) !important;
+}
+.main-content *[style*="background: #F59E0B"],
+.main-content *[style*="background:#F59E0B"] {
+  background: var(--text-muted) !important;
+}
+
+/* 12. Floating Tooltips in charts */
+.main-content *[style*="background: rgba(21, 22, 30"],
+.main-content *[style*="background:#1C1D24"],
+.main-content *[style*="background: #1C1D24"] {
+  background: var(--panel-elevated) !important;
+  border-color: var(--border-strong) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+  color: var(--text) !important;
+}
+
+/* 13. 3D Score Delta Panel specific overrides */
+.score-delta-card {
+  background-color: var(--panel) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+}
+.score-delta-card::before {
+  background: radial-gradient(
+    350px circle at var(--card-mouse-x, 50%) var(--card-mouse-y, 50%),
+    rgba(28, 25, 23, 0.02),
+    transparent 80%
+  ) !important;
+}
+.card-grid-bg {
+  opacity: 0.03 !important;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px) !important;
+}
+.metric-row-3d {
+  background-color: var(--panel-soft) !important;
+  border-color: var(--border) !important;
+}
+.metric-row-3d:hover {
+  background-color: var(--panel-elevated) !important;
+  border-color: var(--border-strong) !important;
+}
+.rail-track {
+  background-color: #E2E0D8 !important;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+.endpoint-dot {
+  background-color: var(--text) !important;
+}
+.tick-mark-3d {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+.tooltip-box {
+  background-color: var(--panel-elevated) !important;
+  border-color: var(--border-strong) !important;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08) !important;
 }

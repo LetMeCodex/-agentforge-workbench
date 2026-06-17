@@ -88,9 +88,9 @@ export default function App() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <div style={{ display: 'flex', width: '26px', height: '26px', alignItems: 'center', justifyContent: 'center' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="24" height="24" rx="7" fill="#8C52FF" />
-                  <path d="M6 15C6 11.6863 8.68629 9 12 9C15.3137 9 18 11.6863 18 15" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-                  <circle cx="12" cy="15" r="2.5" fill="white" />
+                  <rect width="24" height="24" rx="7" fill="var(--logo-fill)" />
+                  <path d="M6 15C6 11.6863 8.68629 9 12 9C15.3137 9 18 11.6863 18 15" stroke="var(--logo-stroke)" strokeWidth="2.5" strokeLinecap="round" />
+                  <circle cx="12" cy="15" r="2.5" fill="var(--logo-stroke)" />
                 </svg>
               </div>
               <h1 style={{ fontSize: '15px', color: '#ffffff', fontWeight: '750', letterSpacing: '-0.015em', fontFamily: "'Outfit', sans-serif" }}>
@@ -207,9 +207,9 @@ export default function App() {
             <span style={{ 
               fontSize: '9px', 
               fontWeight: '650', 
-              background: 'rgba(140,82,255,0.12)', 
-              color: '#8C52FF', 
-              border: '1px solid rgba(140,82,255,0.18)', 
+              background: 'var(--accent-soft)', 
+              color: 'var(--text)', 
+              border: '1px solid var(--border)', 
               padding: '2px 8px', 
               borderRadius: '9999px',
               textTransform: 'uppercase',
